@@ -113,6 +113,7 @@ h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
+  color: var(--maroon-color);
   scroll-margin: 40px;
 }
 
@@ -356,6 +357,7 @@ main .section.highlight {
   font-family: var(--heading-font-family);
   font-size: 20px;
   font-weight: 700;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -405,6 +407,7 @@ main .section.highlight {
   background-color: #f2eadc;
   color: var(--maroon-color);
   font-weight: 700;
+  text-align: center;
 }
 
 .song-lyrics > div:last-child > div {
