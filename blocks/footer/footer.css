@@ -1,7 +1,7 @@
 footer {
   border-top: 3px solid var(--gold-color);
-  background-color: var(--maroon-color);
-  color: #fffdf9;
+  background-color: var(--dark-color);
+  color: var(--light-color);
   font-size: var(--body-font-size-xs);
 }
 
@@ -23,14 +23,14 @@ footer .footer > div {
 
 footer .footer p:first-child {
   margin-bottom: 8px;
-  color: #fffdf9;
+  color: var(--light-color);
   font-family: var(--heading-font-family);
   font-size: 22px;
   font-weight: 700;
 }
 
 footer .footer p:last-child {
-  color: #e6d9d4;
+  color: rgb(255 253 251 / 76%);
 }
 
 @media (width >= 900px) {

@@ -94,13 +94,39 @@ export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
-  const fragment = await loadFragment(navPath);
+  const fragment = await loadFragment(navPath, { decorate: false });
 
   // decorate nav DOM
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+
+  const authoredNav = nav.querySelector('.home');
+  if (!nav.querySelector('.nav-brand') && authoredNav) {
+    const navLabels = [...authoredNav.querySelectorAll(':scope > div > div')];
+    const brand = document.createElement('div');
+    brand.className = 'nav-brand';
+    const brandLink = document.createElement('a');
+    brandLink.href = '/';
+    brandLink.textContent = 'Divine Vibes';
+    brand.append(brandLink);
+
+    const sections = document.createElement('div');
+    sections.className = 'nav-sections';
+    const content = document.createElement('div');
+    content.className = 'default-content-wrapper';
+    const list = document.createElement('ul');
+    navLabels.forEach((cell) => {
+      const item = document.createElement('li');
+      const text = cell.querySelector(':scope > p') || cell;
+      while (text.firstChild) item.append(text.firstChild);
+      list.append(item);
+    });
+    content.append(list);
+    sections.append(content);
+    nav.replaceChildren(brand, sections);
+  }
 
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {

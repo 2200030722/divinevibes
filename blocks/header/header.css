@@ -275,9 +275,10 @@ header nav .nav-tools {
 header .nav-wrapper {
   position: sticky;
   top: 0;
-  border-bottom: 1px solid #e9e1d5;
+  z-index: 10;
+  border-bottom: 1px solid rgb(74 43 88 / 12%);
   background-color: var(--background-color);
-  box-shadow: 0 5px 18px rgb(48 39 44 / 6%);
+  box-shadow: 0 5px 18px rgb(47 31 57 / 6%);
 }
 
 header nav {
@@ -291,6 +292,21 @@ header .nav-brand {
   font-family: var(--heading-font-family);
 }
 
+header .nav-brand a:any-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: inherit;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+header .nav-brand {
+  flex: 0 0 auto;
+}
+
 header nav .nav-sections ul a:any-link {
   position: relative;
   display: inline-flex;
@@ -299,6 +315,18 @@ header nav .nav-sections ul a:any-link {
   color: var(--maroon-color);
   text-decoration: none;
   transition: color 160ms ease;
+}
+
+header nav .nav-sections ul > li {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  color: var(--maroon-color);
+  transition: color 160ms ease;
+}
+
+header nav .nav-sections ul > li:hover {
+  color: var(--purple-color);
 }
 
 header nav .nav-sections ul a:any-link::after {

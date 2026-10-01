@@ -12,20 +12,20 @@
 
 :root {
   /* colors */
-  --background-color: #fbf8f1;
-  --light-color: #fffdf9;
-  --dark-color: #412047;
-  --text-color: #30272c;
-  --link-color: #642b43;
-  --link-hover-color: #8a4b57;
-  --gold-color: #b58a43;
-  --maroon-color: #642b43;
-  --purple-color: #49334f;
-  --green-color: #61765e;
+  --background-color: #faf7f1;
+  --light-color: #fffdfb;
+  --dark-color: #2c1d39;
+  --text-color: #332c38;
+  --link-color: #573267;
+  --link-hover-color: #744983;
+  --gold-color: #bf8735;
+  --maroon-color: #4a2b58;
+  --purple-color: #392448;
+  --green-color: #586a51;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --heading-font-family: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
 
   /* body sizes */
   --body-font-size-m: 17px;
@@ -162,6 +162,7 @@ a:any-link {
   color: var(--link-color);
   text-decoration: none;
   overflow-wrap: break-word;
+  transition: color 160ms ease;
 }
 
 a:hover {
