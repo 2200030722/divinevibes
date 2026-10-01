@@ -12,32 +12,36 @@
 
 :root {
   /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --background-color: #faf7f1;
+  --light-color: #fffdfb;
+  --dark-color: #2c1d39;
+  --text-color: #332c38;
+  --link-color: #573267;
+  --link-hover-color: #744983;
+  --gold-color: #bf8735;
+  --maroon-color: #4a2b58;
+  --purple-color: #392448;
+  --green-color: #586a51;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --heading-font-family: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-m: 17px;
+  --body-font-size-s: 16px;
+  --body-font-size-xs: 14px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --heading-font-size-xxl: 48px;
+  --heading-font-size-xl: 38px;
+  --heading-font-size-l: 30px;
+  --heading-font-size-m: 24px;
+  --heading-font-size-s: 21px;
+  --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 72px;
 }
 
 /* fallback fonts */
@@ -56,16 +60,16 @@
 @media (width >= 900px) {
   :root {
     /* body sizes */
-    --body-font-size-m: 18px;
+    --body-font-size-m: 16px;
     --body-font-size-s: 16px;
     --body-font-size-xs: 14px;
 
     /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
+    --heading-font-size-xxl: 54px;
+    --heading-font-size-xl: 42px;
+    --heading-font-size-l: 32px;
+    --heading-font-size-m: 25px;
+    --heading-font-size-s: 21px;
     --heading-font-size-xs: 18px;
   }
 }
@@ -109,6 +113,7 @@ h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
+  color: var(--maroon-color);
   scroll-margin: 40px;
 }
 
@@ -158,6 +163,7 @@ a:any-link {
   color: var(--link-color);
   text-decoration: none;
   overflow-wrap: break-word;
+  transition: color 160ms ease;
 }
 
 a:hover {
@@ -323,3 +329,285 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+.devotional-songs,
+.song-lyrics,
+.gods {
+  box-sizing: border-box;
+  width: calc(100% - 48px);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 0;
+}
+
+.devotional-songs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.devotional-songs > div {
+  display: contents;
+}
+
+.devotional-songs > div:first-child > div {
+  padding: 10px 4px 12px;
+  border-bottom: 2px solid var(--gold-color);
+  color: var(--maroon-color);
+  font-family: var(--heading-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.devotional-songs > div:not(:first-child) > div {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 18px 20px;
+  border: 1px solid #e9e1d5;
+  border-radius: 8px;
+  background-color: var(--light-color);
+  box-shadow: 0 8px 22px rgb(48 39 44 / 6%);
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 500;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.devotional-songs > div:not(:first-child) > div:hover {
+  transform: translateY(-3px);
+  border-color: #d5bd8f;
+  box-shadow: 0 12px 26px rgb(48 39 44 / 10%);
+}
+
+.song-lyrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid #e7dfd3;
+  border-radius: 8px;
+  background-color: var(--light-color);
+  box-shadow: 0 10px 28px rgb(48 39 44 / 6%);
+}
+
+.song-lyrics > div {
+  display: contents;
+}
+
+.song-lyrics > div > div {
+  min-width: 0;
+  padding: 18px 22px;
+  overflow-wrap: anywhere;
+}
+
+.song-lyrics > div:first-child > div {
+  background-color: #f2eadc;
+  color: var(--maroon-color);
+  font-weight: 700;
+  text-align: center;
+}
+
+.song-lyrics > div:last-child > div {
+  border-top: 1px solid #e7dfd3;
+}
+
+.gods {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.gods > div {
+  display: contents;
+}
+
+.gods > div > div {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e8dfd1;
+  border-radius: 8px;
+  background-color: var(--light-color);
+  box-shadow: 0 10px 24px rgb(48 39 44 / 7%);
+  text-align: center;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.gods > div > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgb(48 39 44 / 12%);
+}
+
+.gods > div > div > p:first-child {
+  height: 300px;
+  margin: 0;
+  overflow: hidden;
+  background-color: #f0e8dc;
+}
+
+.gods picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gods img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms ease;
+}
+
+.gods > div > div:hover img {
+  transform: scale(1.035);
+}
+
+.gods > div > div > p:last-child {
+  margin: 0;
+  padding: 18px 12px 20px;
+  color: var(--maroon-color);
+  font-family: var(--heading-font-family);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.daily-quote,
+.prayer {
+  box-sizing: border-box;
+  width: calc(100% - 48px);
+  max-width: 880px;
+  margin: 0 auto 28px;
+  padding: 34px 36px;
+  border: 1px solid #e8dfd1;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgb(48 39 44 / 8%);
+  text-align: center;
+  animation: rise-in 550ms ease both;
+}
+
+.daily-quote {
+  background-color: #f1eaf1;
+}
+
+.prayer {
+  margin-bottom: 76px;
+  background-color: #edf1e9;
+}
+
+.daily-quote > div:first-child > div,
+.prayer > div:first-child > div {
+  color: var(--gold-color);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.daily-quote > div:first-child > div::after,
+.prayer > div:first-child > div::after {
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin: 12px auto 16px;
+  background-color: var(--gold-color);
+  content: '';
+}
+
+.daily-quote > div:last-child > div {
+  color: var(--purple-color);
+  font-family: var(--heading-font-family);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.prayer > div:last-child > div {
+  color: #3d5140;
+  font-family: var(--heading-font-family);
+  font-size: 23px;
+  line-height: 1.45;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (width <= 900px) {
+  .devotional-songs,
+  .song-lyrics,
+  .gods {
+    padding: 56px 0;
+  }
+
+  .gods {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width <= 600px) {
+  .devotional-songs,
+  .song-lyrics,
+  .gods,
+  .daily-quote,
+  .prayer {
+    width: calc(100% - 32px);
+  }
+
+  .devotional-songs,
+  .song-lyrics,
+  .gods {
+    padding: 44px 0;
+  }
+
+  .gods {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .gods > div > div > p:first-child {
+    height: 320px;
+  }
+
+  .daily-quote,
+  .prayer {
+    margin-bottom: 20px;
+    padding: 28px 20px;
+  }
+
+  .prayer {
+    margin-bottom: 48px;
+  }
+
+  .daily-quote > div:last-child > div {
+    font-size: 23px;
+  }
+
+  .prayer > div:last-child > div {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+/* AEM CODE SYNC TEST */

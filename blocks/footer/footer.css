@@ -1,5 +1,7 @@
 footer {
-  background-color: var(--light-color);
+  border-top: 3px solid var(--gold-color);
+  background-color: var(--dark-color);
+  color: var(--light-color);
   font-size: var(--body-font-size-xs);
 }
 
@@ -11,6 +13,24 @@ footer .footer > div {
 
 footer .footer p {
   margin: 0;
+}
+
+footer .footer > div {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  text-align: center;
+}
+
+footer .footer p:first-child {
+  margin-bottom: 8px;
+  color: var(--light-color);
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+footer .footer p:last-child {
+  color: rgb(255 253 251 / 76%);
 }
 
 @media (width >= 900px) {
