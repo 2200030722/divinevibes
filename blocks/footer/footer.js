@@ -9,7 +9,11 @@ export default async function decorate(block) {
   // load footer as fragment
   const footerMeta = getMetadata('footer');
   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
-  const fragment = await loadFragment(footerPath, { decorate: false });
+  let fragment = await loadFragment(footerPath, { decorate: false });
+  if (!fragment && footerPath !== footerPath.toLowerCase()) {
+    fragment = await loadFragment(footerPath.toLowerCase(), { decorate: false });
+  }
+  if (!fragment) return;
 
   const authoredFooter = fragment.querySelector('.footer');
   if (authoredFooter) {
